@@ -1,33 +1,39 @@
-@baseColor: #1e1e1e;
-@secondaryColor: #252526;
-@tertiaryColor: #333337;
+@primary: #1A42E5;
+@baseColor: white;
+@secondaryColor: white;
+@tertiaryColor: #ccccc8;
 @warningColor: #1c97ea;
 @warning2Color: #007acc;
-@controlColor: #252526;
+@controlColor: white;
 @hoverColor: @warning2Color;
-@hoverBg2Color: #3e3e42;
-@hoverBgColor: #3e3e40;
-@contrastColor: #686868;
-@borderColor: #3f3f46;
-@selectedColor: #264f78;
-@disabledSelectedColor: desaturate(mix(@baseColor, @selectedColor, 25%), 50%);
-@headerColor: #333337;
+@hoverBg2Color: #c1c1bd;
+@disabledLight: #c1c1bd;
+@hoverBgColor: rgba(26, 66, 229,0.1);
+@contrastColor: #979797;
+@borderColor: #c0c0b9;
+@selectedColor: white;
+@disabledSelectedColor: desaturate(mix(@selectedColor, @primary, 25%), 50%);
+@headerColor: @baseColor;
 @highlightColor: @warningColor;
 @highlightBgColor: @highlightColor;
-@darkBgColor: #1b1b1c;
-@invertedColor: #dcdcdc;
-@invertedSecondaryColor: white;
-@titleBarTextColor: #999999;
-@textColor: #dcdcdc;
+@darkBgColor: white;
+@invertedColor: #232323;
+@invertedSecondaryColor: black;
+@titleBarTextColor: #666666;
+@textColor: #232323;
 
-@buttonBgColor: #3f3f46;
-@buttonBorderColor: #555555;
-@buttonDisabledTextColor: #656565;
-@buttonDisabledBgColor: #2D2D30;
-@buttonDisabledBorderColor: #3F3F46;
+@borderLineColor: rgba(42,55,81, 0.16);
+@buttonBgColor: white;
+@buttonTextColor: @primary;
+@buttonBorderColor: @borderLineColor;
+@buttonDisabledTextColor: fade(#2A3751, 32%);
+@buttonDisabledBgColor: white;
+@buttonDisabledBorderColor: @buttonDisabledTextColor;
 
 @windowBorderSize: 1px;
 @windowBorderColor: @warning2Color;
+
+@selectedBGOcean: rgba(26, 66, 229,0.2);
 
 @baseFontSize: 13px;
 @fontLineSize: @units1_1;
@@ -62,8 +68,12 @@ body {
 	.sidePanel;
 }
 
-[data-id=toolbuttons] {
-    background-color: @tertiaryColor;
+//[data-id=toolbuttons] {
+//    background-color: @tertiaryColor;
+//}
+
+[data-id=sidebar] {
+    border-right: 1px solid @borderLineColor;
 }
 
 // [data-control-class=MainTabs] {
@@ -73,12 +83,15 @@ body {
 // }
 
 [data-control-class=MainTabs] .tabsHeader[data-selected] {
-    background-color: @warning2Color;
-    color: @invertedColor;
-	fill: @invertedColor;
+    background-color: @primary;
+    color: @baseColor;
+    fill: @baseColor;
     border-bottom: none;
     font-weight: bold;
-//    border-bottom: 1px solid@highlightColor;
+    &:hover {
+        color: @textColor;
+        fill: @textColor;
+    }
 }
 
 .seekBar {
@@ -101,5 +114,5 @@ body {
 }
 
 [data-control-class=TracklistFilter] .lvHeaderSingleItem {
-    border-color: transparent !important; 
+    border-color: transparent !important;
 }

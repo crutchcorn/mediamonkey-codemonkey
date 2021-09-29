@@ -1,4 +1,4 @@
-[data-id='player-volumebar'] {    
+[data-id='player-volumebar'] {
     height: @units0_8;
     width: @units4_0;
 }
@@ -34,6 +34,7 @@
 
 [data-id='player'], [data-id='player'] .ratingStar {
 	background-color: @darkBgColor;
+    border-top: 1px solid @borderLineColor;
 	color: @invertedColor;
 	fill: @invertedColor;
 }
@@ -43,19 +44,19 @@
         background-color: @textColor;
         border-radius: 0.5px;
     }
-    
+
     & .seekBarBefore {
         background-color: @warning2Color;
     }
-    
+
     & .seekBarThumb {
         border: 3px solid transparent;
     }
-    
+
     & .ratingCanvas[data-hover] .ratingStar {
         fill: @warning2Color;
     }
-    
+
     & .ticksOuter .tick {
         background-color: @invertedSecondaryColor;
         display:none;

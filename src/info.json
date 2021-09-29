@@ -1,9 +1,9 @@
 {
-    "title": "Code Monkey",
+    "title": "Code Monkey (Light)",
     "id": "CodeMonkey",
     "description": "A dark skin inspired by the color theme of Visual Studio.",
     "version": "1.0.0",
     "type": "skin",
-    "author": "mmuffins",
+    "author": "crutchcorn",
     "icon": "info.png"
 }

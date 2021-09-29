@@ -6,58 +6,74 @@
 [data-control-class="ColumnTrackList"] .lvItem[data-even]:not([data-selected]),
 [data-control-class="GroupedTrackList"] .lvItem[data-even]:not([data-selected]),
 [data-control-class="SimpleTracklist"] .lvItem[data-even]:not([data-selected]) {
-	background-color: @secondaryColor;
+	background-color: fade(@primary, 14%);
 
 	.transparentBackground &[data-hover], &[data-hover] {
-		background-color: @hoverBg2Color;
+		background-color: fade(@primary, 28%);
 	}
-    
+
     .transparentBackground & {
         background-color: transparent;
     }
 }
 
+.itemNowPlaying {
+  color: @primary !important;
+  fill: @primary !important;
+}
+
 /* Selected listview item */
 .lvItem[data-selected], div:focus .lvItem[data-selected] {
-    color: @invertedColor;
-    fill: @invertedColor;
+    color: @baseColor;
+    fill: @baseColor;
+    background-color: fade(@primary, 60%);
+
+    &.itemNowPlaying {
+      color: @baseColor !important;
+      fill: @baseColor !important;
+    }
 
     &[data-hover] {
-		background-color: @warning2Color;
+		background-color: fade(@primary, 80%);
 	}
-    
+
 	.clickable:hover {
 		color: @hoverBg2Color;
 	}
-    
+
     & .showWhenItemSelected {
         fill: @textColor;
     }
 }
 
-.lvItem.itemNowPlaying[data-selected], .lvItem.itemNowPlaying[data-selected] label, .lvItem[data-selected] .ratingStar, 
+.lvItem.itemNowPlaying[data-selected], .lvItem.itemNowPlaying[data-selected] label, .lvItem[data-selected] .ratingStar,
 .lvItem[data-selected] .itemNowPlaying, .lvItem[data-selected] .itemNowPlaying label {
-    color: @invertedColor;
-    fill: @invertedColor;
+    color: @baseColor;
+    fill: @baseColor;
 }
 
 .lvItem[data-selected] .ratingCanvas[data-hover] .ratingStar, .lvItem.itemNowPlaying[data-selected] .ratingStar, .lvItem[data-selected] .itemNowPlaying .ratingStar {
-    fill: mix(@warningColor, @invertedColor, 90%);
+    fill: @baseColor;
 }
 
 .lvItem[data-selected] {
-	fill: @textColor; /* A temporary tweak, should be better designed once the hover button stabilize */
+	fill: @baseColor; /* A temporary tweak, should be better designed once the hover button stabilize */
 }
 
 /* Main tree has slightly different selection - less prominent */
 [data-control-class=MediaTree] .lvItem[data-selected] {
-    color: @highlightColor;
-    fill: @highlightColor;
-    background-color: inherit;
+    color: @baseColor;
+    fill: @baseColor;
+    background-color: rgba(26, 66, 229,0.2);
 
     &[data-hover] {
 		background-color: @hoverBgColor;
 	}
+}
+
+.itemInaccessible, .itemInaccessible label, div:focus .lvItem.itemInaccessible[data-selected], div:focus .lvItem.itemInaccessible[data-selected] label {
+  color: @disabledLight;
+  fill: @disabledLight;
 }
 
 .lvHeaderItem {
