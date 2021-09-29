@@ -1,6 +1,6 @@
 {
-  "name": "mediamonkey-codemonkey",
-  "version": "1.0.0",
+  "name": "mediamonkey-codemonkey-light",
+  "version": "0.1.0",
   "description": "A dark skin for MediaMonkey 5 inspired by the color theme of Visual Studio.",
   "main": "index.js",
   "scripts": {
@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/crutchcorn/mediamonkey-codemonkey.git"
+    "url": "git+https://github.com/crutchcorn/mediamonkey-codemonkey-light.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/crutchcorn/mediamonkey-codemonkey/issues"
+    "url": "https://github.com/crutchcorn/mediamonkey-codemonkey-light/issues"
   },
-  "homepage": "https://github.com/crutchcorn/mediamonkey-codemonkey#readme",
+  "homepage": "https://github.com/crutchcorn/mediamonkey-codemonkey-light#readme",
   "dependencies": {
     "@crutchcorn/pack-mmip": "^1.0.2"
   }
