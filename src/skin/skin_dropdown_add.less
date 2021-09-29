@@ -18,63 +18,78 @@
 }
 
 .editable-select:hover > .es-select {
-    fill: @warning2Color;
-    background-color: @darkBgColor;
-    border: 1px solid @warning2Color;
+    fill: fade(@primary, 40%);
+    background-color: fade(@primary, 10%);
+    border: 1px solid fade(@primary, 20%);
     border-left-width: 0px;
 }
 
 .editable-select:hover > .es-edit {
-    border: 1px solid @warning2Color;
+    border: 1px solid fade(@primary, 20%);
 }
 
 .editable-select:active > .es-select {
-    fill: @textColor;
-    background-color: @warning2Color;
+    fill: fade(@primary, 40%);
+    background-color: fade(@primary, 20%);
 }
 
 .editable-select[data-focused] > .es-select {
-    fill: @textColor;
-    background-color: @warning2Color;
-    border: 1px solid @warning2Color;
+    fill: fade(@primary, 40%);
+    background-color: fade(@primary, 20%);
+    border: 1px solid fade(#2A3751, 40%);
     border-left-width: 0px;
 }
 
 .dropdownitem[data-focused], .dropdownitem[data-selected] {
-    color:white;
+    color: @textColor;
     fill: @borderColor;
 }
 
+.dropdownitem.lvItem[data-selected] {
+    background-color: fade(@primary, 14%);
+
+    &[data-hover]:not([data-disabled]) {
+        background-color: fade(@primary, 28%);
+	}
+}
 .dropdownitem.lvItem:not([data-selected]) {
     background-color: @darkBgColor;
     border-color: none;
-    color: white;
-	
+    color: @textColor;
+
     &[data-hover]:not([data-disabled]) {
-		background-color: @buttonBgColor;
+		background-color: @hoverBgColor;
 	}
 }
 
 .searchBox .es-edit,
 .searchBox .es-select {
     color: @textColor;
-    fill: @textColor;    
+    fill: @textColor;
 }
 
 .es-select, .flex > .es-select {
-    background-color: @tertiaryColor;
-    border: 1px solid @borderColor;
+    background-color: @baseColor;
+    border: 1px solid @borderLineColor;
     border-left-width: 0px;
-    fill: #999999;
-    // &:hover:not([data-disabled]) {
-    //     fill: @warning2Color;
-    //     background-color: @darkBgColor;
-    //     border: 1px solid @warning2Color;
-    //     border-left-width: 0px;
-    // }
-    // &:active:not([data-disabled]) {
-    //     fill: @textColor;
-    //     background-color: @warning2Color;
-    //     border-left-width: 0px;
-    // }
+    border-radius: 0 4px 4px 0;
+    fill: fade(@primary, 40%);
+
+     &:hover:not(:active):not([data-disabled]) {
+         background: fade(@primary, 10%);
+         border-color: fade(@primary, 20%);
+         fill: fade(@primary, 40%);
+     }
+     &:active:not([data-disabled]) {
+         background: fade(@primary, 20%);
+         border-color: fade(#2A3751, 40%);
+         fill: fade(@primary, 40%);
+     }
+
+    &[data-disabled] {
+        fill: fade(#2A3751, 8%);
+        border-color: fade(#2A3751, 8%);
+    }
 }
+
+.dropdownitem.lvItem:not([data-selected])[data-hover]:not([data-disabled]) {}
